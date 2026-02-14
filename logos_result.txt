@@ -1,0 +1,47 @@
+--- Valid URLs ---
+priv-1: https://api.iconify.design/simple-icons:protonmail.svg
+priv-8: https://api.iconify.design/simple-icons:simplelogin.svg
+stream-18: https://api.iconify.design/simple-icons:lmms.svg
+learn-7: https://api.iconify.design/simple-icons:anki.svg
+game-6: https://api.iconify.design/simple-icons:retroarch.svg
+game-7: https://api.iconify.design/simple-icons:nexusmods.svg
+read-1: https://api.iconify.design/simple-icons:gutenberg.svg
+read-8: https://api.iconify.design/simple-icons:wattpad.svg
+dl-9: https://api.iconify.design/simple-icons:mega.svg
+ai-3: https://api.iconify.design/logos:anthropic-icon.svg
+ai-5: https://api.iconify.design/simple-icons:perplexity.svg
+ai-7: https://api.iconify.design/logos:openai-icon.svg
+ai-13: https://api.iconify.design/simple-icons:elevenlabs.svg
+ai-14: https://api.iconify.design/simple-icons:suno.svg
+ai-18: https://api.iconify.design/logos:grammarly-icon.svg
+ai-27: https://api.iconify.design/logos:notion-icon.svg
+ai-30: https://api.iconify.design/simple-icons:vercel.svg
+
+--- Invalid URLs ---
+priv-7 (Mullvad VPN): https://api.iconify.design/logos:mullvad.svg (404)
+priv-9 (uBlock Origin): https://api.iconify.design/logos:u-block-origin.svg (404)
+priv-10 (Veracrypt): https://api.iconify.design/simple-icons:veracrypt.svg (404)
+stream-17 (MuseScore): https://api.iconify.design/logos:musescore.svg (404)
+stream-19 (Tenacity): https://api.iconify.design/simple-icons:tenacity.svg (404)
+learn-6 (The Odin Project): https://api.iconify.design/logos:the-odin-project.svg (404)
+game-10 (Lutris): https://api.iconify.design/logos:lutris.svg (404)
+read-3 (Calibre): https://api.iconify.design/simple-icons:calibre.svg (404)
+read-9 (Libby): https://api.iconify.design/simple-icons:libby.svg (404)
+dl-1 (qBittorrent): https://api.iconify.design/logos:qbittorrent.svg (404)
+dl-2 (JDownloader 2): https://api.iconify.design/simple-icons:jdownloader.svg (404)
+dl-8 (Transmission): https://api.iconify.design/logos:transmission.svg (404)
+ai-2 (Midjourney): https://api.iconify.design/simple-icons:midjourney.svg (404)
+ai-6 (Stable Diffusion): https://api.iconify.design/simple-icons:stabilityai.svg (404)
+ai-8 (Jasper): https://api.iconify.design/simple-icons:jasper.svg (404)
+ai-9 (Copy.ai): https://api.iconify.design/logos:copy-ai.svg (404)
+ai-11 (Runway): https://api.iconify.design/simple-icons:runway.svg (404)
+ai-16 (Character.ai): https://api.iconify.design/simple-icons:characterai.svg (404)
+ai-17 (Descript): https://api.iconify.design/simple-icons:descript.svg (404)
+ai-19 (QuillBot): https://api.iconify.design/simple-icons:quillbot.svg (404)
+ai-20 (Otter.ai): https://api.iconify.design/logos:otter-icon.svg (404)
+ai-21 (Gamma): https://api.iconify.design/simple-icons:gamma.svg (404)
+ai-22 (Beautiful.ai): https://api.iconify.design/simple-icons:beautifulai.svg (404)
+ai-23 (Synthesia): https://api.iconify.design/simple-icons:synthesia.svg (404)
+ai-24 (Tabnine): https://api.iconify.design/logos:tabnine.svg (404)
+ai-26 (Leonardo.Ai): https://api.iconify.design/simple-icons:leonardoai.svg (404)
+ai-28 (Udio): https://api.iconify.design/simple-icons:udio.svg (404)

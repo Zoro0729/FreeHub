@@ -16,8 +16,8 @@ export interface Resource {
   url: string;
   categoryId: string;
   tags: string[];
-  iconUrl?: string; // Optional URL for logo
-  iconName?: string; // Optional Iconify name
+  iconUrl?: string; // Optional URL for logo (legacy, we now use iconName for both)
+  iconName?: string; // Iconify name OR Logo URL
   isFeatured?: boolean;
   isNew?: boolean;
   type: 'Free' | 'Freemium' | 'Paid' | 'Open Source';
@@ -109,7 +109,6 @@ export const resources: Resource[] = [
     url: 'https://code.visualstudio.com',
     categoryId: 'development',
     tags: ['Editor', 'Microsoft', 'Dev Tool'],
-    iconUrl: 'https://api.iconify.design/logos:visual-studio-code.svg',
     isFeatured: true,
     type: 'Free',
     subType: 'Editor'
@@ -133,7 +132,6 @@ export const resources: Resource[] = [
     url: 'https://github.com',
     categoryId: 'development',
     tags: ['Git', 'Repo', 'Collaboration'],
-    iconUrl: 'https://api.iconify.design/logos:github-icon.svg',
     type: 'Freemium',
     subType: 'Platform'
   },
@@ -144,7 +142,6 @@ export const resources: Resource[] = [
     url: 'https://www.docker.com',
     categoryId: 'development',
     tags: ['DevOps', 'Container', 'Tool'],
-    iconUrl: 'https://api.iconify.design/logos:docker-icon.svg',
     type: 'Freemium',
     subType: 'DevOps'
   },
@@ -155,7 +152,6 @@ export const resources: Resource[] = [
     url: 'https://www.postman.com',
     categoryId: 'development',
     tags: ['API', 'Testing', 'Dev Tool'],
-    iconUrl: 'https://api.iconify.design/logos:postman-icon.svg',
     type: 'Freemium',
     subType: 'API'
   },
@@ -166,7 +162,6 @@ export const resources: Resource[] = [
     url: 'https://stackoverflow.com',
     categoryId: 'development',
     tags: ['Community', 'Help', 'Q&A'],
-    iconUrl: 'https://api.iconify.design/logos:stackoverflow-icon.svg',
     type: 'Free',
     subType: 'Community'
   },
@@ -177,7 +172,6 @@ export const resources: Resource[] = [
     url: 'https://vercel.com',
     categoryId: 'development',
     tags: ['Hosting', 'Frontend', 'Cloud'],
-    iconUrl: 'https://api.iconify.design/logos:vercel-icon.svg',
     type: 'Freemium',
     subType: 'Hosting'
   },
@@ -188,7 +182,6 @@ export const resources: Resource[] = [
     url: 'https://supabase.com',
     categoryId: 'development',
     tags: ['Backend', 'Database', 'Open Source'],
-    iconUrl: 'https://api.iconify.design/logos:supabase-icon.svg',
     type: 'Freemium',
     subType: 'Backend'
   },
@@ -199,7 +192,6 @@ export const resources: Resource[] = [
     url: 'https://codepen.io',
     categoryId: 'development',
     tags: ['Frontend', 'Editor', 'Community'],
-    iconUrl: 'https://api.iconify.design/logos:codepen-icon.svg',
     type: 'Freemium',
     subType: 'Playground'
   },
@@ -210,7 +202,6 @@ export const resources: Resource[] = [
     url: 'https://git-scm.com',
     categoryId: 'development',
     tags: ['VCS', 'CLI', 'Tool'],
-    iconUrl: 'https://api.iconify.design/logos:git-icon.svg',
     type: 'Open Source',
     subType: 'Tool'
   },
@@ -222,8 +213,8 @@ export const resources: Resource[] = [
     description: 'Secure email based in Switzerland. Encrypted to keep your communications private.',
     url: 'https://proton.me/mail',
     categoryId: 'privacy',
+    iconName: 'https://api.iconify.design/simple-icons:protonmail.svg',
     tags: ['Privacy', 'Email', 'Secure'],
-    iconName: 'solar:shield-keyhole-linear',
     isFeatured: true,
     type: 'Free',
     subType: 'Secure'
@@ -235,7 +226,6 @@ export const resources: Resource[] = [
     url: 'https://www.torproject.org',
     categoryId: 'privacy',
     tags: ['Browser', 'Anonymity', 'Security'],
-    iconUrl: 'https://api.iconify.design/logos:tor-browser.svg',
     type: 'Open Source',
     subType: 'Browser'
   },
@@ -246,7 +236,6 @@ export const resources: Resource[] = [
     url: 'https://signal.org',
     categoryId: 'privacy',
     tags: ['Messaging', 'Encrypted', 'Mobile'],
-    iconUrl: 'https://api.iconify.design/logos:signal.svg',
     type: 'Free',
     subType: 'Messaging'
   },
@@ -257,7 +246,6 @@ export const resources: Resource[] = [
     url: 'https://bitwarden.com',
     categoryId: 'privacy',
     tags: ['Passwords', 'Security', 'Manager'],
-    iconUrl: 'https://api.iconify.design/logos:bitwarden.svg',
     type: 'Freemium',
     subType: 'Security'
   },
@@ -268,7 +256,6 @@ export const resources: Resource[] = [
     url: 'https://duckduckgo.com',
     categoryId: 'privacy',
     tags: ['Search', 'Privacy', 'Engine'],
-    iconUrl: 'https://api.iconify.design/logos:duckduckgo.svg',
     type: 'Free',
     subType: 'Search'
   },
@@ -279,7 +266,6 @@ export const resources: Resource[] = [
     url: 'https://brave.com',
     categoryId: 'privacy',
     tags: ['Browser', 'Adblock', 'Crypto'],
-    iconUrl: 'https://api.iconify.design/logos:brave.svg',
     type: 'Free',
     subType: 'Browser'
   },
@@ -290,7 +276,7 @@ export const resources: Resource[] = [
     url: 'https://mullvad.net',
     categoryId: 'privacy',
     tags: ['VPN', 'Network', 'Security'],
-    iconName: 'solar:shield-up-linear',
+    iconName: 'https://api.iconify.design/logos:mullvad.svg',
     type: 'Paid',
     subType: 'VPN'
   },
@@ -300,8 +286,8 @@ export const resources: Resource[] = [
     description: 'Protect your email address with email aliases.',
     url: 'https://simplelogin.io',
     categoryId: 'privacy',
+    iconName: 'https://api.iconify.design/simple-icons:simplelogin.svg',
     tags: ['Email', 'Alias', 'Security'],
-    iconName: 'solar:letter-linear',
     type: 'Freemium',
     subType: 'Email'
   },
@@ -312,7 +298,7 @@ export const resources: Resource[] = [
     url: 'https://github.com/gorhill/uBlock',
     categoryId: 'privacy',
     tags: ['Extension', 'Adblock', 'Open Source'],
-    iconName: 'solar:forbidden-circle-linear',
+    iconName: 'https://api.iconify.design/logos:u-block-origin.svg',
     type: 'Open Source',
     subType: 'Extension'
   },
@@ -323,7 +309,7 @@ export const resources: Resource[] = [
     url: 'https://www.veracrypt.fr',
     categoryId: 'privacy',
     tags: ['Encryption', 'Security', 'Disk'],
-    iconName: 'solar:lock-password-linear',
+    iconName: 'https://api.iconify.design/simple-icons:veracrypt.svg',
     type: 'Open Source',
     subType: 'Encryption'
   },
@@ -395,7 +381,6 @@ export const resources: Resource[] = [
     url: 'https://open.spotify.com',
     categoryId: 'streaming',
     tags: ['Music', 'Audio', 'Podcast'],
-    iconUrl: 'https://api.iconify.design/logos:spotify-icon.svg',
     type: 'Freemium',
     subType: 'Music',
     section: 'Audio'
@@ -407,7 +392,6 @@ export const resources: Resource[] = [
     url: 'https://www.audacityteam.org',
     categoryId: 'streaming',
     tags: ['Audio', 'Editor', 'Recording'],
-    iconUrl: 'https://api.iconify.design/logos:audacity.svg',
     type: 'Open Source',
     subType: 'Tool',
     section: 'Audio'
@@ -419,7 +403,6 @@ export const resources: Resource[] = [
     url: 'https://soundcloud.com',
     categoryId: 'streaming',
     tags: ['Music', 'Community', 'Streaming'],
-    iconUrl: 'https://api.iconify.design/logos:soundcloud.svg',
     type: 'Freemium',
     subType: 'Platform',
     section: 'Audio'
@@ -431,7 +414,6 @@ export const resources: Resource[] = [
     url: 'https://www.deezer.com',
     categoryId: 'streaming',
     tags: ['Music', 'Streaming', 'Songs'],
-    iconUrl: 'https://api.iconify.design/simple-icons:deezer.svg',
     type: 'Freemium',
     subType: 'Music',
     section: 'Audio'
@@ -443,7 +425,7 @@ export const resources: Resource[] = [
     url: 'https://musescore.org',
     categoryId: 'streaming',
     tags: ['Music', 'Notation', 'Sheet'],
-    iconName: 'solar:music-note-2-linear',
+    iconName: 'https://api.iconify.design/logos:musescore.svg',
     type: 'Open Source',
     subType: 'Software',
     section: 'Audio'
@@ -454,8 +436,8 @@ export const resources: Resource[] = [
     description: 'Cross-platform music production software. Produce music with your computer.',
     url: 'https://lmms.io',
     categoryId: 'streaming',
+    iconName: 'https://api.iconify.design/simple-icons:lmms.svg',
     tags: ['DAW', 'Music', 'Production'],
-    iconName: 'solar:music-library-2-linear',
     type: 'Open Source',
     subType: 'Software',
     section: 'Audio'
@@ -467,7 +449,7 @@ export const resources: Resource[] = [
     url: 'https://tenacityaudio.org',
     categoryId: 'streaming',
     tags: ['Audio', 'Editor', 'Open Source'],
-    iconName: 'solar:soundwave-square-linear',
+    iconName: 'https://api.iconify.design/simple-icons:tenacity.svg',
     type: 'Open Source',
     subType: 'Software',
     section: 'Audio'
@@ -481,7 +463,6 @@ export const resources: Resource[] = [
     url: 'https://www.khanacademy.org',
     categoryId: 'learning',
     tags: ['Education', 'Courses', 'Free'],
-    iconUrl: 'https://api.iconify.design/simple-icons:khanacademy.svg',
     type: 'Free',
     subType: 'Platform'
   },
@@ -492,7 +473,6 @@ export const resources: Resource[] = [
     url: 'https://www.freecodecamp.org',
     categoryId: 'learning',
     tags: ['Coding', 'Web Dev', 'Certifications'],
-    iconUrl: 'https://api.iconify.design/simple-icons:freecodecamp.svg',
     type: 'Free',
     subType: 'Coding'
   },
@@ -503,7 +483,6 @@ export const resources: Resource[] = [
     url: 'https://www.coursera.org',
     categoryId: 'learning',
     tags: ['University', 'Courses', 'Certificates'],
-    iconUrl: 'https://api.iconify.design/logos:coursera.svg',
     type: 'Freemium',
     subType: 'Platform'
   },
@@ -514,7 +493,6 @@ export const resources: Resource[] = [
     url: 'https://www.duolingo.com',
     categoryId: 'learning',
     tags: ['Languages', 'Gamified', 'Mobile'],
-    iconUrl: 'https://api.iconify.design/logos:duolingo.svg',
     type: 'Free',
     subType: 'Language'
   },
@@ -525,7 +503,6 @@ export const resources: Resource[] = [
     url: 'https://www.edx.org',
     categoryId: 'learning',
     tags: ['University', 'Higher Ed', 'Courses'],
-    iconUrl: 'https://api.iconify.design/logos:edx.svg',
     type: 'Freemium',
     subType: 'Platform'
   },
@@ -536,7 +513,7 @@ export const resources: Resource[] = [
     url: 'https://www.theodinproject.com',
     categoryId: 'learning',
     tags: ['Web Dev', 'Curriculum', 'Open Source'],
-    iconName: 'solar:code-file-linear',
+    iconName: 'https://api.iconify.design/logos:the-odin-project.svg',
     type: 'Free',
     subType: 'Coding'
   },
@@ -546,8 +523,8 @@ export const resources: Resource[] = [
     description: 'Powerful, intelligent flash cards. Remembering things just became much easier.',
     url: 'https://apps.ankiweb.net',
     categoryId: 'learning',
+    iconName: 'https://api.iconify.design/simple-icons:anki.svg',
     tags: ['Memory', 'Flashcards', 'Study'],
-    iconName: 'solar:card-search-linear',
     type: 'Open Source',
     subType: 'Tool'
   },
@@ -558,7 +535,6 @@ export const resources: Resource[] = [
     url: 'https://www.codecademy.com',
     categoryId: 'learning',
     tags: ['Interactive', 'Coding', 'Skills'],
-    iconUrl: 'https://api.iconify.design/logos:codecademy.svg',
     type: 'Freemium',
     subType: 'Coding'
   },
@@ -569,7 +545,6 @@ export const resources: Resource[] = [
     url: 'https://www.ted.com',
     categoryId: 'learning',
     tags: ['Inspiration', 'Video', 'Lectures'],
-    iconUrl: 'https://api.iconify.design/logos:ted.svg',
     type: 'Free',
     subType: 'Media'
   },
@@ -580,7 +555,6 @@ export const resources: Resource[] = [
     url: 'https://developer.mozilla.org',
     categoryId: 'learning',
     tags: ['Documentation', 'Web', 'Reference'],
-    iconUrl: 'https://api.iconify.design/logos:mdn.svg',
     type: 'Free',
     subType: 'Reference'
   },
@@ -593,7 +567,6 @@ export const resources: Resource[] = [
     url: 'https://store.steampowered.com',
     categoryId: 'gaming',
     tags: ['Store', 'Community', 'PC'],
-    iconUrl: 'https://api.iconify.design/logos:steam.svg',
     type: 'Free',
     subType: 'Platform'
   },
@@ -604,7 +577,6 @@ export const resources: Resource[] = [
     url: 'https://store.epicgames.com',
     categoryId: 'gaming',
     tags: ['Store', 'Free Games', 'PC'],
-    iconUrl: 'https://api.iconify.design/logos:epic-games.svg',
     type: 'Free',
     subType: 'Platform'
   },
@@ -615,7 +587,6 @@ export const resources: Resource[] = [
     url: 'https://discord.com',
     categoryId: 'gaming',
     tags: ['Chat', 'VoIP', 'Community'],
-    iconUrl: 'https://api.iconify.design/logos:discord-icon.svg',
     type: 'Free',
     subType: 'Social'
   },
@@ -626,7 +597,6 @@ export const resources: Resource[] = [
     url: 'https://itch.io',
     categoryId: 'gaming',
     tags: ['Indie', 'Store', 'Hosting'],
-    iconUrl: 'https://api.iconify.design/simple-icons:itchdotio.svg',
     type: 'Free',
     subType: 'Platform'
   },
@@ -637,7 +607,6 @@ export const resources: Resource[] = [
     url: 'https://www.gog.com/galaxy',
     categoryId: 'gaming',
     tags: ['Launcher', 'DRM-free', 'Store'],
-    iconUrl: 'https://api.iconify.design/logos:gog-com.svg',
     type: 'Free',
     subType: 'Launcher'
   },
@@ -647,8 +616,8 @@ export const resources: Resource[] = [
     description: 'Frontend for emulators, game engines and media players.',
     url: 'https://www.retroarch.com',
     categoryId: 'gaming',
+    iconName: 'https://api.iconify.design/simple-icons:retroarch.svg',
     tags: ['Emulation', 'Retro', 'All-in-one'],
-    iconName: 'solar:gamepad-old-linear',
     type: 'Open Source',
     subType: 'Emulation'
   },
@@ -658,8 +627,8 @@ export const resources: Resource[] = [
     description: 'We host 500,000+ mods for 2,500+ games from Warhammer 40,000 to The Witcher.',
     url: 'https://www.nexusmods.com',
     categoryId: 'gaming',
+    iconName: 'https://api.iconify.design/simple-icons:nexusmods.svg',
     tags: ['Mods', 'Community', 'Tools'],
-    iconName: 'solar:tuning-2-linear',
     type: 'Free',
     subType: 'Mods'
   },
@@ -670,7 +639,6 @@ export const resources: Resource[] = [
     url: 'https://www.nvidia.com/en-us/geforce-now',
     categoryId: 'gaming',
     tags: ['Cloud', 'Streaming', 'Nvidia'],
-    iconUrl: 'https://api.iconify.design/simple-icons:nvidia.svg',
     type: 'Freemium',
     subType: 'Cloud'
   },
@@ -681,7 +649,6 @@ export const resources: Resource[] = [
     url: 'https://www.roblox.com',
     categoryId: 'gaming',
     tags: ['Social', 'Sandbox', 'Creation'],
-    iconUrl: 'https://api.iconify.design/simple-icons:roblox.svg',
     type: 'Freemium',
     subType: 'Platform'
   },
@@ -692,7 +659,7 @@ export const resources: Resource[] = [
     url: 'https://lutris.net',
     categoryId: 'gaming',
     tags: ['Linux', 'Launcher', 'Manager'],
-    iconName: 'solar:play-circle-linear',
+    iconName: 'https://api.iconify.design/logos:lutris.svg',
     type: 'Open Source',
     subType: 'Launcher'
   },
@@ -704,8 +671,8 @@ export const resources: Resource[] = [
     description: 'A library of over 70,000 free eBooks. Choose among free epub and Kindle eBooks.',
     url: 'https://www.gutenberg.org',
     categoryId: 'reading',
+    iconName: 'https://api.iconify.design/simple-icons:gutenberg.svg',
     tags: ['Ebooks', 'Public Domain', 'Library'],
-    iconName: 'solar:book-linear',
     type: 'Free',
     subType: 'Library'
   },
@@ -716,7 +683,6 @@ export const resources: Resource[] = [
     url: 'https://www.goodreads.com',
     categoryId: 'reading',
     tags: ['Social', 'Reviews', 'Tracking'],
-    iconUrl: 'https://api.iconify.design/logos:goodreads.svg',
     type: 'Free',
     subType: 'Community'
   },
@@ -727,7 +693,7 @@ export const resources: Resource[] = [
     url: 'https://calibre-ebook.com',
     categoryId: 'reading',
     tags: ['Manager', 'Converter', 'Reader'],
-    iconName: 'solar:library-linear',
+    iconName: 'https://api.iconify.design/simple-icons:calibre.svg',
     type: 'Open Source',
     subType: 'Software'
   },
@@ -738,7 +704,6 @@ export const resources: Resource[] = [
     url: 'https://www.audible.com',
     categoryId: 'reading',
     tags: ['Audiobooks', 'Amazon', 'Listen'],
-    iconUrl: 'https://api.iconify.design/simple-icons:audible.svg',
     type: 'Paid',
     subType: 'Audio'
   },
@@ -749,7 +714,6 @@ export const resources: Resource[] = [
     url: 'https://archive.org',
     categoryId: 'reading',
     tags: ['History', 'Library', 'Preservation'],
-    iconUrl: 'https://api.iconify.design/simple-icons:internetarchive.svg',
     type: 'Free',
     subType: 'Archive'
   },
@@ -760,7 +724,6 @@ export const resources: Resource[] = [
     url: 'https://feedly.com',
     categoryId: 'reading',
     tags: ['RSS', 'News', 'Aggregator'],
-    iconUrl: 'https://api.iconify.design/logos:feedly.svg',
     type: 'Freemium',
     subType: 'RSS'
   },
@@ -771,7 +734,6 @@ export const resources: Resource[] = [
     url: 'https://getpocket.com',
     categoryId: 'reading',
     tags: ['Bookmarks', 'Read Later', 'Offline'],
-    iconUrl: 'https://api.iconify.design/logos:pocket-icon.svg',
     type: 'Freemium',
     subType: 'Tool'
   },
@@ -781,8 +743,8 @@ export const resources: Resource[] = [
     description: 'The world\'s most loved social storytelling platform.',
     url: 'https://www.wattpad.com',
     categoryId: 'reading',
+    iconName: 'https://api.iconify.design/simple-icons:wattpad.svg',
     tags: ['Stories', 'Writing', 'Community'],
-    iconName: 'solar:pen-new-square-linear',
     type: 'Free',
     subType: 'Platform'
   },
@@ -793,7 +755,7 @@ export const resources: Resource[] = [
     url: 'https://libbyapp.com',
     categoryId: 'reading',
     tags: ['Library', 'App', 'Free'],
-    iconName: 'solar:bookmark-circle-linear',
+    iconName: 'https://api.iconify.design/simple-icons:libby.svg',
     type: 'Free',
     subType: 'App'
   },
@@ -804,7 +766,6 @@ export const resources: Resource[] = [
     url: 'https://medium.com',
     categoryId: 'reading',
     tags: ['Articles', 'Blog', 'Writing'],
-    iconUrl: 'https://api.iconify.design/logos:medium-icon.svg',
     type: 'Freemium',
     subType: 'Platform'
   },
@@ -817,7 +778,7 @@ export const resources: Resource[] = [
     url: 'https://www.qbittorrent.org',
     categoryId: 'downloading',
     tags: ['Torrent', 'P2P', 'Client'],
-    iconName: 'solar:cloud-download-linear',
+    iconName: 'https://api.iconify.design/logos:qbittorrent.svg',
     type: 'Open Source',
     subType: 'Client'
   },
@@ -828,7 +789,7 @@ export const resources: Resource[] = [
     url: 'https://jdownloader.org',
     categoryId: 'downloading',
     tags: ['Manager', 'Automated', 'Java'],
-    iconName: 'solar:download-square-linear',
+    iconName: 'https://api.iconify.design/simple-icons:jdownloader.svg',
     type: 'Open Source',
     subType: 'Manager'
   },
@@ -850,7 +811,6 @@ export const resources: Resource[] = [
     url: 'https://wetransfer.com',
     categoryId: 'downloading',
     tags: ['File Sharing', 'Transfer', 'Cloud'],
-    iconUrl: 'https://api.iconify.design/logos:wetransfer.svg',
     type: 'Freemium',
     subType: 'Transfer'
   },
@@ -861,7 +821,6 @@ export const resources: Resource[] = [
     url: 'https://www.google.com/drive',
     categoryId: 'downloading',
     tags: ['Storage', 'Cloud', 'Google'],
-    iconUrl: 'https://api.iconify.design/logos:google-drive.svg',
     type: 'Freemium',
     subType: 'Storage'
   },
@@ -872,7 +831,6 @@ export const resources: Resource[] = [
     url: 'https://www.dropbox.com',
     categoryId: 'downloading',
     tags: ['Storage', 'Sync', 'Cloud'],
-    iconUrl: 'https://api.iconify.design/logos:dropbox.svg',
     type: 'Freemium',
     subType: 'Storage'
   },
@@ -894,7 +852,7 @@ export const resources: Resource[] = [
     url: 'https://transmissionbt.com',
     categoryId: 'downloading',
     tags: ['Torrent', 'Lightweight', 'Mac'],
-    iconName: 'solar:transfer-horizontal-linear',
+    iconName: 'https://api.iconify.design/logos:transmission.svg',
     type: 'Open Source',
     subType: 'Client'
   },
@@ -904,8 +862,8 @@ export const resources: Resource[] = [
     description: 'Reliable storage and fast transfers. We provide end-to-end encrypted cloud storage.',
     url: 'https://mega.io',
     categoryId: 'downloading',
+    iconName: 'https://api.iconify.design/simple-icons:mega.svg',
     tags: ['Storage', 'Encrypted', 'Cloud'],
-    iconName: 'solar:cloud-check-linear',
     type: 'Freemium',
     subType: 'Storage'
   },
@@ -929,7 +887,6 @@ export const resources: Resource[] = [
     url: 'https://chat.openai.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Chatbot', 'OpenAI'],
-    iconUrl: 'https://api.iconify.design/simple-icons:openai.svg',
     isNew: true,
     isFeatured: true,
     type: 'Freemium',
@@ -942,7 +899,7 @@ export const resources: Resource[] = [
     url: 'https://www.midjourney.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Art', 'Image Gen'],
-    iconName: 'solar:gallery-wide-linear',
+    iconName: 'https://api.iconify.design/simple-icons:midjourney.svg',
     type: 'Paid',
     subType: 'Art'
   },
@@ -952,8 +909,8 @@ export const resources: Resource[] = [
     description: 'A next-generation AI assistant built for work and trained to be safe, accurate, and secure.',
     url: 'https://claude.ai',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/logos:anthropic-icon.svg',
     tags: ['AI', 'Chatbot', 'Anthropic'],
-    iconName: 'solar:chat-square-call-linear',
     type: 'Freemium',
     subType: 'Assistant'
   },
@@ -964,7 +921,6 @@ export const resources: Resource[] = [
     url: 'https://gemini.google.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Google', 'Multimodal'],
-    iconUrl: 'https://api.iconify.design/logos:google-gemini.svg',
     type: 'Free',
     subType: 'Assistant'
   },
@@ -974,8 +930,8 @@ export const resources: Resource[] = [
     description: 'An AI-powered answer engine that answers queries using natural language predictive text.',
     url: 'https://www.perplexity.ai',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/simple-icons:perplexity.svg',
     tags: ['AI', 'Search', 'Research'],
-    iconName: 'solar:magnifer-linear',
     isFeatured: true,
     type: 'Freemium',
     subType: 'Search'
@@ -987,7 +943,7 @@ export const resources: Resource[] = [
     url: 'https://stability.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Art', 'Open Source'],
-    iconName: 'solar:palette-linear',
+    iconName: 'https://api.iconify.design/simple-icons:stabilityai.svg',
     type: 'Open Source',
     subType: 'Art'
   },
@@ -997,8 +953,8 @@ export const resources: Resource[] = [
     description: 'AI system that can create realistic images and art from a description in natural language.',
     url: 'https://openai.com/dall-e-3',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/logos:openai-icon.svg',
     tags: ['AI', 'Art', 'OpenAI'],
-    iconName: 'solar:gallery-edit-linear',
     type: 'Paid',
     subType: 'Art'
   },
@@ -1009,7 +965,7 @@ export const resources: Resource[] = [
     url: 'https://www.jasper.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Writing', 'Marketing'],
-    iconName: 'solar:pen-new-square-linear',
+    iconName: 'https://api.iconify.design/simple-icons:jasper.svg',
     type: 'Paid',
     subType: 'Writing'
   },
@@ -1020,7 +976,7 @@ export const resources: Resource[] = [
     url: 'https://www.copy.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Writing', 'Marketing'],
-    iconName: 'solar:document-add-linear',
+    iconName: 'https://api.iconify.design/logos:copy-ai.svg',
     type: 'Freemium',
     subType: 'Writing'
   },
@@ -1031,7 +987,6 @@ export const resources: Resource[] = [
     url: 'https://github.com/features/copilot',
     categoryId: 'ai-tools',
     tags: ['AI', 'Coding', 'Dev'],
-    iconUrl: 'https://api.iconify.design/logos:github-copilot.svg',
     isFeatured: true,
     type: 'Paid',
     subType: 'Coding'
@@ -1043,7 +998,7 @@ export const resources: Resource[] = [
     url: 'https://runwayml.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Video', 'Editing'],
-    iconName: 'solar:videocamera-linear',
+    iconName: 'https://api.iconify.design/simple-icons:runway.svg',
     type: 'Freemium',
     subType: 'Video'
   },
@@ -1054,7 +1009,6 @@ export const resources: Resource[] = [
     url: 'https://huggingface.co',
     categoryId: 'ai-tools',
     tags: ['AI', 'Dev', 'Models'],
-    iconUrl: 'https://api.iconify.design/logos:hugging-face-icon.svg',
     type: 'Open Source',
     subType: 'Platform'
   },
@@ -1064,8 +1018,8 @@ export const resources: Resource[] = [
     description: 'The most realistic and versatile AI speech software. Premier AI text to speech.',
     url: 'https://elevenlabs.io',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/simple-icons:elevenlabs.svg',
     tags: ['AI', 'Audio', 'TTS'],
-    iconName: 'solar:music-note-slider-linear',
     type: 'Freemium',
     subType: 'Audio'
   },
@@ -1075,8 +1029,8 @@ export const resources: Resource[] = [
     description: 'Building a future where anyone can make great music.',
     url: 'https://suno.com',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/simple-icons:suno.svg',
     tags: ['AI', 'Music', 'Audio'],
-    iconName: 'solar:music-library-linear',
     isNew: true,
     type: 'Freemium',
     subType: 'Music'
@@ -1100,7 +1054,7 @@ export const resources: Resource[] = [
     url: 'https://character.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Chat', 'Entertainment'],
-    iconName: 'solar:user-speak-rounded-linear',
+    iconName: 'https://api.iconify.design/simple-icons:characterai.svg',
     type: 'Free',
     subType: 'Chat'
   },
@@ -1111,7 +1065,7 @@ export const resources: Resource[] = [
     url: 'https://www.descript.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Video', 'Podcasting'],
-    iconName: 'solar:microphone-3-linear',
+    iconName: 'https://api.iconify.design/simple-icons:descript.svg',
     type: 'Freemium',
     subType: 'Editing'
   },
@@ -1121,8 +1075,8 @@ export const resources: Resource[] = [
     description: 'AI writing assistance that helps you write clearly and effectively.',
     url: 'https://www.grammarly.com',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/logos:grammarly-icon.svg',
     tags: ['AI', 'Writing', 'Productivity'],
-    iconUrl: 'https://api.iconify.design/logos:grammarly-icon.svg',
     type: 'Freemium',
     subType: 'Writing'
   },
@@ -1133,7 +1087,7 @@ export const resources: Resource[] = [
     url: 'https://quillbot.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Writing', 'Student'],
-    iconName: 'solar:pen-2-linear',
+    iconName: 'https://api.iconify.design/simple-icons:quillbot.svg',
     type: 'Freemium',
     subType: 'Writing'
   },
@@ -1144,7 +1098,7 @@ export const resources: Resource[] = [
     url: 'https://otter.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Productivity', 'Meetings'],
-    iconName: 'solar:soundwave-linear',
+    iconName: 'https://api.iconify.design/logos:otter-icon.svg',
     type: 'Freemium',
     subType: 'Productivity'
   },
@@ -1155,7 +1109,7 @@ export const resources: Resource[] = [
     url: 'https://gamma.app',
     categoryId: 'ai-tools',
     tags: ['AI', 'Presentation', 'Design'],
-    iconName: 'solar:presentation-graph-linear',
+    iconName: 'https://api.iconify.design/simple-icons:gamma.svg',
     type: 'Freemium',
     subType: 'Presentation'
   },
@@ -1166,7 +1120,7 @@ export const resources: Resource[] = [
     url: 'https://www.beautiful.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Presentation', 'Design'],
-    iconName: 'solar:monitor-smartphone-linear',
+    iconName: 'https://api.iconify.design/simple-icons:beautifulai.svg',
     type: 'Paid',
     subType: 'Presentation'
   },
@@ -1177,7 +1131,7 @@ export const resources: Resource[] = [
     url: 'https://www.synthesia.io',
     categoryId: 'ai-tools',
     tags: ['AI', 'Video', 'Avatar'],
-    iconName: 'solar:user-id-linear',
+    iconName: 'https://api.iconify.design/simple-icons:synthesia.svg',
     type: 'Paid',
     subType: 'Video'
   },
@@ -1188,7 +1142,7 @@ export const resources: Resource[] = [
     url: 'https://www.tabnine.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Coding', 'Dev'],
-    iconName: 'solar:code-scan-linear',
+    iconName: 'https://api.iconify.design/logos:tabnine.svg',
     type: 'Freemium',
     subType: 'Coding'
   },
@@ -1210,7 +1164,7 @@ export const resources: Resource[] = [
     url: 'https://leonardo.ai',
     categoryId: 'ai-tools',
     tags: ['AI', 'Art', 'Design'],
-    iconName: 'solar:brush-linear',
+    iconName: 'https://api.iconify.design/simple-icons:leonardoai.svg',
     type: 'Freemium',
     subType: 'Art'
   },
@@ -1220,8 +1174,8 @@ export const resources: Resource[] = [
     description: 'Access the limitless power of AI, right inside Notion.',
     url: 'https://www.notion.so/product/ai',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/logos:notion-icon.svg',
     tags: ['AI', 'Productivity', 'Writing'],
-    iconUrl: 'https://api.iconify.design/logos:notion-icon.svg',
     type: 'Paid',
     subType: 'Productivity'
   },
@@ -1232,7 +1186,7 @@ export const resources: Resource[] = [
     url: 'https://www.udio.com',
     categoryId: 'ai-tools',
     tags: ['AI', 'Music', 'Audio'],
-    iconName: 'solar:music-note-linear',
+    iconName: 'https://api.iconify.design/simple-icons:udio.svg',
     isNew: true,
     type: 'Freemium',
     subType: 'Music'
@@ -1255,9 +1209,42 @@ export const resources: Resource[] = [
     description: 'Generate UI with simple text prompts. Copy, paste, ship.',
     url: 'https://v0.dev',
     categoryId: 'ai-tools',
+    iconName: 'https://api.iconify.design/simple-icons:vercel.svg',
     tags: ['AI', 'Web Dev', 'UI'],
-    iconUrl: 'https://api.iconify.design/lucide:vercel.svg',
     type: 'Freemium',
     subType: 'Coding'
-  }
-];
+  },
+
+  {
+    id: 'stream-spotify',
+    title: 'Spotify',
+    description: 'Digital music service that gives you access to millions of songs.',
+    url: 'https://www.spotify.com',
+    categoryId: 'streaming',
+    iconName: 'https://api.iconify.design/logos:spotify-icon.svg',
+    tags: ['Music', 'Audio', 'Streaming'],
+    type: 'Freemium',
+    subType: 'Audio'
+  },
+  {
+    id: 'stream-netflix',
+    title: 'Netflix',
+    description: 'Watch Netflix movies & TV shows online or stream right to your smart TV.',
+    url: 'https://www.netflix.com',
+    categoryId: 'streaming',
+    iconName: 'https://api.iconify.design/logos:netflix-icon.svg',
+    tags: ['Movies', 'TV', 'Originals'],
+    type: 'Paid',
+    subType: 'Video'
+  },
+  {
+    id: 'stream-moviebox',
+    title: 'Movie Box',
+    description: 'A popular destination for streaming movies and TV shows for free.',
+    url: 'https://moviebox.com',
+    categoryId: 'streaming',
+    iconName: 'solar:clapperboard-play-linear',
+    tags: ['Movies', 'Free', 'Streaming'],
+    type: 'Free',
+    subType: 'Platform'
+  },];
