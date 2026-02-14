@@ -45,32 +45,33 @@ const AdminPage = () => {
     setShowAddForm(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     const tags = tagsInput.split(',').map(t => t.trim()).filter(Boolean);
 
     if (editingId) {
-        editResource(editingId, {
+        await editResource(editingId, {
             ...formData,
             tags
         });
         alert('Resource updated successfully!');
-    } else {
-        const newResource: Resource = {
-            id: `res-${Date.now()}`,
-            title: formData.title || 'Untitled',
-            description: formData.description || '',
-            url: formData.url || '',
-            categoryId: formData.categoryId || 'ai-tools',
-            tags: tags,
-            type: (formData.type as any) || 'Free',
-            subType: formData.subType || 'Tool',
-            iconName: 'solar:link-circle-linear'
-        };
-        addResource(newResource);
-        alert('Resource added successfully!');
+        } else {
+            const newResource = {
+                title: formData.title || 'Untitled',
+        description: formData.description || '',
+        url: formData.url || '',
+        categoryId: formData.categoryId || 'ai-tools',
+        tags: tags,
+        type: (formData.type as any) || 'Free',
+        subType: formData.subType || 'Tool',
+        iconName: 'solar:link-circle-linear'
+      };
+
+      await addResource(newResource as Resource);
+      alert('Resource added successfully!');
     }
+
     
     resetForm();
   };
